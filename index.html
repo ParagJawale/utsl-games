@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Golu Gang: Merge Drop | Free desi merge puzzle for Android</title>
+<meta name="description" content="Drop, merge and grow the Golu Gang. A cute Indian merge puzzle with 11 desi buddies, daily challenges and festive jars. Free on Google Play. Web version coming soon.">
+<link rel="canonical" href="https://games.utsltech.com/">
+<meta name="theme-color" content="#2B1A3A">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Golu Gang: Merge Drop">
+<meta property="og:description" content="Drop, merge and grow the Golu Gang. Can you crown Raja? Free on Google Play.">
+<meta property="og:url" content="https://games.utsltech.com/">
+<meta property="og:image" content="https://games.utsltech.com/assets/img/og-image.jpg">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "VideoGame",
+  "name": "Golu Gang: Merge Drop",
+  "description": "A cute Indian merge puzzle. Drop a buddy into the jar, merge matching pairs into bigger buddies and crown Raja.",
+  "url": "https://games.utsltech.com/",
+  "image": "https://games.utsltech.com/assets/img/og-image.jpg",
+  "genre": ["Puzzle", "Casual", "Merge"],
+  "gamePlatform": "Android",
+  "applicationCategory": "GameApplication",
+  "operatingSystem": "Android",
+  "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"},
+  "publisher": {"@type": "Organization", "name": "Uplighter Technology & Services Pvt. Ltd.", "url": "https://utsltech.com", "email": "support@utsltech.com"},
+  "sameAs": ["https://www.instagram.com/the.golugang/"]
+}
+</script>
+<style>
+:root{
+  --plum:#2B1A3A;      /* outlines, text, night sky */
+  --night:#3A1652;     /* game background top */
+  --berry:#821E46;     /* game background bottom */
+  --gold:#FFD23F;      /* Golu yellow, headline */
+  --marigold:#FF9F1C;  /* Bunty orange */
+  --magenta:#D63384;   /* Rani magenta */
+  --go:#2EC46E;        /* play button green */
+  --cream:#FFF6E6;
+  --ink-soft:#6B4C70;
+  --outline:4px solid var(--plum);
+  --display:"Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --body:"Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font:16px/1.6 var(--body);color:var(--plum);background:var(--cream);overflow-x:hidden}
+img,video,canvas{max-width:100%;display:block}
+img{height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;margin:0;letter-spacing:.3px}
+h2{font-size:clamp(34px,5vw,54px)}
+h3{font-size:26px}
+p{margin:0 0 14px;max-width:62ch}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);padding:8px 14px;border-radius:10px;z-index:10}
+.skip:focus{left:8px}
+
+/* marigold garland: the brand's festive edge */
+.garland{height:34px;background:
+  radial-gradient(circle at 17px 9px,#FFC21A 0 9px,#C8640A 9.5px 11px,transparent 11.5px) 0 0/34px 34px repeat-x,
+  radial-gradient(circle at 0 9px,#FF8A00 0 9px,#B8540A 9.5px 11px,transparent 11.5px) 0 0/34px 34px repeat-x;
+  position:relative;z-index:2}
+
+/* ---------- header ---------- */
+.top{background:var(--plum);color:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:22px}
+.brand img{width:40px;height:40px;border-radius:11px;border:2px solid var(--gold)}
+.top nav{margin-left:auto;display:flex;gap:22px;font-weight:600;font-size:15px}
+.top nav a{text-decoration:none;opacity:.88}
+.top nav a:hover{opacity:1;color:var(--gold)}
+.top .mini-badge img{height:40px;width:auto}
+@media (max-width:760px){.top nav{display:none}.top .mini-badge{margin-left:auto}}
+
+/* ---------- hero ---------- */
+.hero{background:linear-gradient(180deg,var(--night) 0%,#5A1A55 60%,var(--berry) 100%);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(2px 2px at 12% 18%,#fff8 50%,transparent 51%),radial-gradient(2px 2px at 30% 8%,#fff6 50%,transparent 51%),
+  radial-gradient(3px 3px at 48% 22%,#ffe9a8 50%,transparent 51%),radial-gradient(2px 2px at 70% 12%,#fff8 50%,transparent 51%),
+  radial-gradient(2px 2px at 88% 30%,#fff6 50%,transparent 51%),radial-gradient(3px 3px at 8% 46%,#ffe9a8 50%,transparent 51%),
+  radial-gradient(2px 2px at 60% 40%,#fff5 50%,transparent 51%);pointer-events:none}
+.hero .wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center;padding:56px 0 0;position:relative}
+.hero h1{font-size:clamp(54px,8.6vw,108px);color:var(--gold);-webkit-text-stroke:3px var(--plum);paint-order:stroke fill;text-shadow:0 6px 0 var(--plum)}
+.hero h1 .l2{display:block;color:#fff}
+.hero .lede{font-size:clamp(17px,2vw,20px);margin:22px 0 26px;max-width:34ch;color:#FCE9F2}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px}
+.play-badge img{height:64px;width:auto;transition:transform .15s}
+.play-badge:hover img{transform:translateY(-2px)}
+.soon{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;background:#ffffff1a;border:2px dashed #ffffff66;padding:9px 16px;border-radius:999px}
+.soon .dot{width:9px;height:9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #FFD23F33}
+.facts{display:flex;flex-wrap:wrap;gap:10px 24px;margin:30px 0 0;padding:0;list-style:none;font-size:15px;color:#F6D7E6}
+.facts strong{color:#fff}
+.phone{justify-self:center;width:min(330px,80vw);aspect-ratio:9/16;border:10px solid var(--plum);border-radius:42px;overflow:hidden;background:#000;box-shadow:0 0 0 4px var(--gold),0 30px 60px #0007;position:relative;margin-bottom:-60px;transform:rotate(2.5deg)}
+.phone video{width:100%;height:100%;object-fit:cover}
+.sound{position:absolute;right:12px;bottom:12px;border:3px solid var(--plum);background:var(--gold);color:var(--plum);font:600 13px var(--body);border-radius:999px;padding:6px 12px;cursor:pointer}
+.hero-buddies{display:flex;align-items:flex-end;gap:2px;margin:56px 0 0;height:90px}
+.hero-buddies img{height:auto}
+@media (max-width:860px){
+  .hero .wrap{grid-template-columns:1fr;padding-top:36px;text-align:left}
+  .phone{margin:10px auto -60px;transform:none}
+  .hero-buddies{display:none}
+}
+.hero-floor{height:90px;background:var(--berry);border-top:6px solid var(--gold)}
+
+/* ---------- section scaffolding ---------- */
+section{padding:96px 0}
+.sec-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:36px}
+.sec-head p{margin:0;color:var(--ink-soft);max-width:44ch}
+
+/* ---------- gameplay ---------- */
+.gameplay{padding-top:130px}
+.clips{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.clip{margin:0}
+.clip .frame{aspect-ratio:9/16;border:var(--outline);border-radius:26px;overflow:hidden;background:var(--plum);box-shadow:8px 8px 0 var(--plum)}
+.clip video{width:100%;height:100%;object-fit:cover}
+.clip figcaption{margin-top:16px}
+.clip figcaption b{font-family:var(--display);font-weight:400;font-size:24px;display:block}
+.clip figcaption span{color:var(--ink-soft);font-size:15px}
+@media (max-width:860px){.clips{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:72%;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:14px}.clip{scroll-snap-align:start}}
+
+.shots{margin-top:64px;display:grid;grid-auto-flow:column;grid-auto-columns:200px;gap:18px;overflow-x:auto;padding:4px 4px 18px;scroll-snap-type:x mandatory}
+.shots img{border-radius:18px;border:3px solid var(--plum);scroll-snap-align:start;aspect-ratio:9/16;object-fit:cover;width:100%}
+.shots-label{font-weight:600;margin-top:64px;margin-bottom:-46px}
+
+/* ---------- gang ---------- */
+.gang{background:var(--gold);border-block:var(--outline)}
+.ladder{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(11,1fr);gap:6px;align-items:end;counter-reset:tier}
+.ladder li{text-align:center;cursor:default}
+.ladder button{all:unset;cursor:pointer;display:block;border-radius:14px}
+.ladder img{margin:0 auto;transition:transform .2s cubic-bezier(.3,1.6,.5,1)}
+.ladder button:hover img,.ladder button:focus-visible img{transform:translateY(-6px) scale(1.08)}
+.ladder .nm{display:block;font-family:var(--display);font-size:18px;margin-top:6px}
+.ladder .tr{display:block;font-size:12px;font-weight:600;color:#7a5a00}
+.bio{margin-top:34px;min-height:3.4em;font-size:18px;display:flex;gap:14px;align-items:baseline;flex-wrap:wrap}
+.bio b{font-family:var(--display);font-weight:400;font-size:28px}
+.merge-rule{display:flex;align-items:center;gap:10px;font-weight:600;margin:0 0 36px}
+.merge-rule img{width:46px}
+@media (max-width:860px){.ladder{grid-template-columns:repeat(6,1fr);row-gap:22px}.ladder .nm{font-size:16px}}
+@media (max-width:420px){.ladder{grid-template-columns:repeat(4,1fr)}}
+
+/* ---------- features ---------- */
+.features .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:var(--outline)}
+.feat{padding:30px 30px 30px 0;border-bottom:2px dashed #2B1A3A44;display:grid;grid-template-columns:80px 1fr;gap:18px;align-items:start}
+.feat:nth-child(odd){border-right:2px dashed #2B1A3A44}
+.feat:nth-child(even){padding-left:30px}
+.feat img{width:76px}
+.feat h3{margin-bottom:6px}
+.feat p{color:var(--ink-soft);margin:0}
+.modes{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.modes span{font-size:13px;font-weight:600;border:2px solid var(--plum);border-radius:999px;padding:2px 10px}
+@media (max-width:760px){.features .grid{grid-template-columns:1fr}.feat,.feat:nth-child(even){padding:26px 0;border-right:0}}
+
+/* ---------- try a mini jar ---------- */
+.try{background:linear-gradient(180deg,var(--night),var(--berry));color:#fff}
+.try .wrap{display:grid;grid-template-columns:1fr auto;gap:56px;align-items:center}
+.try h2{color:var(--gold)}
+.try p{color:#F6D7E6}
+.jar-box{position:relative}
+#jar{width:340px;height:480px;touch-action:none;cursor:crosshair;border-radius:28px;background:#ffffff14;border:6px solid #fff;box-shadow:0 0 0 4px var(--plum)}
+.jar-rim{position:absolute;left:-12px;right:-12px;top:-14px;height:24px;border-radius:12px;background:#E1AF37;border:4px solid var(--plum)}
+.jar-over{position:absolute;inset:0;display:none;flex-direction:column;align-items:center;justify-content:center;gap:12px;text-align:center;background:#2B1A3Ae6;border-radius:28px;padding:24px}
+.jar-over.show{display:flex}
+.jar-over b{font-family:var(--display);font-weight:400;font-size:40px;color:var(--gold)}
+.btn{font:600 16px var(--body);border:3px solid var(--plum);border-radius:999px;padding:11px 22px;cursor:pointer;background:var(--go);color:#fff;box-shadow:0 5px 0 var(--plum);text-decoration:none;display:inline-block}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--plum)}
+.btn.ghost{background:transparent;color:#fff;border-color:#fff;box-shadow:none}
+.jar-hud{display:flex;justify-content:space-between;font-weight:600;margin-top:14px}
+.next{display:flex;align-items:center;gap:8px}
+.next img{width:34px}
+.soon-card{margin-top:26px;border:2px dashed #ffffff77;border-radius:20px;padding:20px 22px;max-width:520px}
+.soon-card h3{color:#fff;margin-bottom:6px}
+.soon-card p{margin:0 0 14px}
+@media (max-width:860px){.try .wrap{grid-template-columns:1fr}.jar-box{justify-self:center}#jar{width:min(340px,86vw);height:auto;aspect-ratio:340/480}}
+
+/* ---------- posters ---------- */
+.posters .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;align-items:start}
+.poster{margin:0}
+.poster button{all:unset;cursor:zoom-in;display:block;border-radius:18px}
+.poster img{border:3px solid var(--plum);border-radius:18px;width:100%;background:#fff}
+.poster.wide{grid-column:span 2}
+.poster figcaption{display:flex;justify-content:space-between;gap:10px;font-size:14px;margin-top:10px;color:var(--ink-soft)}
+.poster figcaption a{font-weight:600;color:var(--magenta)}
+@media (max-width:860px){.posters .grid{grid-template-columns:repeat(2,1fr)}.poster.wide{grid-column:span 2}}
+dialog{border:var(--outline);border-radius:22px;padding:0;max-width:min(92vw,900px);max-height:92vh;background:var(--plum)}
+dialog::backdrop{background:#1a0d24cc}
+dialog img{max-height:84vh;width:auto;margin:auto}
+dialog form{position:absolute;top:10px;right:10px}
+
+/* ---------- final cta ---------- */
+.final{background:linear-gradient(170deg,var(--magenta),var(--marigold));color:#fff;text-align:center;border-top:var(--outline)}
+.final h2{font-size:clamp(46px,8vw,96px);-webkit-text-stroke:3px var(--plum);paint-order:stroke fill;text-shadow:0 6px 0 var(--plum)}
+.final .raja{width:180px;margin:0 auto 18px}
+.final p{margin:16px auto 28px;font-size:18px}
+.final .cta-row{justify-content:center}
+.final .soon{border-color:#fff9}
+
+footer{background:var(--plum);color:#E9D8F0;padding:44px 0 30px;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between}
+footer a{color:var(--gold)}
+footer .made{font-family:var(--display);font-size:22px;color:#fff}
+footer .award img{display:block;height:54px;width:auto;transition:transform .15s}
+footer .award:hover img{transform:translateY(-2px)}
+footer small{display:block;width:100%;opacity:.7;margin-top:10px}
+
+.reveal-pop{animation:pop .5s cubic-bezier(.3,1.6,.5,1) both}
+@keyframes pop{from{transform:scale(.6);opacity:0}}
+@media (prefers-reduced-motion:reduce){.reveal-pop{animation:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Golu Gang: Merge Drop home"><img src="assets/img/icon.webp" alt="" width="40" height="40">Golu Gang</a>
+    <nav aria-label="Sections">
+      <a href="#gameplay">Gameplay</a>
+      <a href="#gang">The gang</a>
+      <a href="#try">Try it</a>
+      <a href="#posters">Posters</a>
+    </nav>
+    <a class="mini-badge play-link" href="#" data-utm="nav"><img src="assets/img/google-play-badge.webp" alt="Get it on Google Play" width="135" height="40"></a>
+  </div>
+</header>
+<div class="garland" aria-hidden="true"></div>
+
+<main id="main">
+<section class="hero" id="top" style="padding:0">
+  <div class="wrap">
+    <div>
+      <h1>Drop. Merge.<span class="l2">Crown Raja.</span></h1>
+      <p class="lede">Golu Gang: Merge Drop is a cute desi merge puzzle. Drop buddies into the jar, match two of a kind, and grow tiny Chiku all the way up to King Raja.</p>
+      <div class="cta-row">
+        <a class="play-badge play-link" href="#" data-utm="hero"><img src="assets/img/google-play-badge.webp" alt="Get it on Google Play" width="216" height="64"></a>
+        <span class="soon"><span class="dot" aria-hidden="true"></span>Web version coming soon</span>
+      </div>
+      <ul class="facts">
+        <li><strong>Free</strong> to play</li>
+        <li><strong>Plays offline</strong></li>
+        <li><strong>11</strong> desi buddies</li>
+        <li><strong>One finger</strong>, aim and tap</li>
+      </ul>
+      <div class="hero-buddies" aria-hidden="true" id="heroBuddies"></div>
+    </div>
+    <div class="phone">
+      <video id="heroVideo" src="assets/video/trailer.mp4" poster="assets/video/trailer_poster.jpg" muted loop playsinline preload="metadata" aria-label="Golu Gang: Merge Drop gameplay trailer"></video>
+      <button class="sound" id="soundBtn" type="button" aria-pressed="false">Sound on</button>
+    </div>
+  </div>
+  <div class="hero-floor" aria-hidden="true"></div>
+</section>
+
+<section class="gameplay" id="gameplay">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>See it in action</h2>
+      <p>Bouncy physics, juicy merges and a festive jar for every mood. Every clip here is real gameplay.</p>
+    </div>
+    <div class="clips">
+      <figure class="clip">
+        <div class="frame"><video data-autoplay src="assets/video/raja.mp4" poster="assets/video/raja_poster.jpg" muted loop playsinline preload="none" aria-label="Combo chain up to Raja"></video></div>
+        <figcaption><b>Chain the combo</b><span>One good drop can set off a merge chain all the way to the crown.</span></figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="frame"><video data-autoplay src="assets/video/diwali.mp4" poster="assets/video/diwali_poster.jpg" muted loop playsinline preload="none" aria-label="Diwali night jar"></video></div>
+        <figcaption><b>Dress up your jar</b><span>Unlock the Diwali night sky, a brass pot, a clay matka and more with coins.</span></figcaption>
+      </figure>
+      <figure class="clip">
+        <div class="frame"><video data-autoplay src="assets/video/swag.mp4" poster="assets/video/swag_poster.jpg" muted loop playsinline preload="none" aria-label="Fast merge gameplay"></video></div>
+        <figcaption><b>Easy to start</b><span>Tap to drop. Two of a kind merge. Keep the pile under the line.</span></figcaption>
+      </figure>
+    </div>
+
+    <p class="shots-label">Screenshots</p>
+    <div class="shots" tabindex="0" aria-label="Game screenshots, scroll sideways">
+      <img src="assets/img/screen_1.webp" alt="Golu Gang: Merge Drop screenshot 1" width="540" height="960" loading="lazy">
+      <img src="assets/img/screen_2.webp" alt="Golu Gang: Merge Drop screenshot 2" width="540" height="960" loading="lazy">
+      <img src="assets/img/screen_3.webp" alt="Golu Gang: Merge Drop screenshot 3" width="540" height="960" loading="lazy">
+      <img src="assets/img/screen_4.webp" alt="Golu Gang: Merge Drop screenshot 4" width="540" height="960" loading="lazy">
+      <img src="assets/img/screen_5.webp" alt="Golu Gang: Merge Drop screenshot 5" width="540" height="960" loading="lazy">
+      <img src="assets/img/screen_6.webp" alt="Golu Gang: Merge Drop screenshot 6" width="540" height="960" loading="lazy">
+    </div>
+  </div>
+</section>
+
+<section class="gang" id="gang">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Meet the Golu Gang</h2>
+      <p>Eleven buddies from the streets of India, smallest to biggest. Tap one to say hello.</p>
+    </div>
+    <p class="merge-rule"><img src="assets/buddies/chiku_idle.webp" alt="Chiku" width="46" height="56"> + <img src="assets/buddies/chiku_idle.webp" alt="Chiku" width="46" height="56"> = <img src="assets/buddies/pinku_happy.webp" alt="Pinku" width="46" height="50"> Two of the same merge into the next buddy.</p>
+    <ol class="ladder" id="ladder"></ol>
+    <p class="bio" id="bio" aria-live="polite"><b>Chiku</b> Tiny and curious. Always sprouting.</p>
+  </div>
+</section>
+
+<section class="features" id="features">
+  <div class="wrap">
+    <div class="sec-head"><h2>Why players keep dropping</h2></div>
+    <div class="grid">
+      <div class="feat"><img src="assets/buddies/golu_happy.webp" alt="" width="76" height="91" loading="lazy">
+        <div><h3>Three ways to play</h3><p>Relax in Chill, take on Classic, or prove yourself in Hard with bigger buddies and triple points.</p>
+        <div class="modes"><span>Chill x1</span><span>Classic x2</span><span>Hard x3</span></div></div></div>
+      <div class="feat"><img src="assets/buddies/guddi_happy.webp" alt="" width="76" height="67" loading="lazy">
+        <div><h3>Daily challenge and free spin</h3><p>A new jar goal every day, the same for everyone, plus a daily spin for coins and rescue power-ups. Keep your streak alive.</p></div></div>
+      <div class="feat"><img src="assets/buddies/tinku_happy.webp" alt="" width="76" height="93" loading="lazy">
+        <div><h3>Desi jars and backgrounds</h3><p>Steel dabba, clay matka, brass pot, blue pottery, neon glow. Then Holi, Monsoon, Patang sky, Juhu sunset and Chanda Mama.</p></div></div>
+      <div class="feat"><img src="assets/buddies/pehelwan_happy.webp" alt="" width="76" height="76" loading="lazy">
+        <div><h3>Leaderboards</h3><p>Pick a nickname and see where you stand in each mode. No sign-in needed.</p></div></div>
+      <div class="feat"><img src="assets/buddies/babloo_happy.webp" alt="" width="76" height="92" loading="lazy">
+        <div><h3>Plays anywhere</h3><p>Small download, works offline and runs well on older phones. Your progress stays on your phone.</p></div></div>
+      <div class="feat"><img src="assets/buddies/rani_happy.webp" alt="" width="76" height="80" loading="lazy">
+        <div><h3>Fair and free</h3><p>Watch a short video only when you want a continue or double coins. Remove the ads between games with one small purchase.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section class="try" id="try">
+  <div class="wrap">
+    <div>
+      <h2>Try a mini jar</h2>
+      <p>Tap or click inside the jar to drop a buddy. Match two of a kind to merge them. How far up the gang can you get before it fills?</p>
+      <div class="soon-card">
+        <h3>The full web version is coming soon</h3>
+        <p>All modes, the shop and the daily challenge, right in your browser. Follow the gang to hear first, or play the full game on Android today.</p>
+        <div class="cta-row">
+          <a class="btn play-link" href="#" data-utm="try">Get it on Google Play</a>
+          <a class="btn ghost" href="https://www.instagram.com/the.golugang/" rel="noopener" target="_blank">Follow @the.golugang</a>
+        </div>
+      </div>
+    </div>
+    <div class="jar-box">
+      <div class="jar-rim" aria-hidden="true"></div>
+      <canvas id="jar" width="340" height="480" aria-label="Mini merge jar. Tap to drop a buddy." role="img"></canvas>
+      <div class="jar-over" id="jarOver" role="status">
+        <b>Jar full!</b>
+        <span id="jarBest">You reached Golu.</span>
+        <button class="btn" type="button" id="jarAgain">Drop again</button>
+        <a class="btn ghost play-link" href="#" data-utm="minijar">Play the full game</a>
+      </div>
+      <div class="jar-hud"><span>Best: <span id="jarTop">Chiku</span></span><span class="next">Next <img id="jarNext" src="assets/buddies/chiku_idle.webp" alt="Chiku"></span></div>
+    </div>
+  </div>
+</section>
+
+<section class="posters" id="posters">
+  <div class="wrap">
+    <div class="sec-head">
+      <h2>Posters and wallpapers</h2>
+      <p>Share them, set them as your wallpaper, or put them on your status. Tap to view full size.</p>
+    </div>
+    <div class="grid">
+      <figure class="poster wide"><button type="button" data-full="assets/img/banner.webp"><img src="assets/img/banner.webp" alt="Golu Gang: Merge Drop game banner with the whole gang" width="1400" height="933" loading="lazy"></button>
+        <figcaption><span>Game banner</span><a href="assets/img/banner.webp" download>Download</a></figcaption></figure>
+      <figure class="poster"><button type="button" data-full="assets/img/poster_diwali.webp"><img src="assets/img/poster_diwali.webp" alt="Diwali poster with the Golu Gang" width="720" height="1280" loading="lazy"></button>
+        <figcaption><span>Diwali story</span><a href="assets/img/poster_diwali.webp" download>Download</a></figcaption></figure>
+      <figure class="poster"><button type="button" data-full="assets/img/poster_score.webp"><img src="assets/img/poster_score.webp" alt="Beat my score poster" width="720" height="1280" loading="lazy"></button>
+        <figcaption><span>Beat my score</span><a href="assets/img/poster_score.webp" download>Download</a></figcaption></figure>
+      <figure class="poster wide"><button type="button" data-full="assets/img/feature.webp"><img src="assets/img/feature.webp" alt="Golu Gang feature graphic with all 11 buddies" width="1024" height="500" loading="lazy"></button>
+        <figcaption><span>Feature graphic</span><a href="assets/img/feature.webp" download>Download</a></figcaption></figure>
+      <figure class="poster wide"><button type="button" data-full="assets/img/poster_main.webp"><img src="assets/img/poster_main.webp" alt="Golu Gang: Merge Drop square poster" width="900" height="900" loading="lazy" style="aspect-ratio:2/1;object-fit:cover"></button>
+        <figcaption><span>Square poster</span><a href="assets/img/poster_main.webp" download>Download</a></figcaption></figure>
+    </div>
+  </div>
+</section>
+<dialog id="viewer" aria-label="Poster full size"><form method="dialog"><button class="btn" type="submit">Close</button></form><img id="viewerImg" alt=""></dialog>
+
+<section class="final">
+  <div class="wrap">
+    <img class="raja" src="assets/buddies/raja_happy.webp" alt="Raja, the king of the Golu Gang" width="180" height="189" loading="lazy">
+    <h2>Can you crown Raja?</h2>
+    <p>Free on Android. Web version coming soon.</p>
+    <div class="cta-row">
+      <a class="play-badge play-link" href="#" data-utm="footer"><img src="assets/img/google-play-badge.webp" alt="Get it on Google Play" width="216" height="64" loading="lazy"></a>
+      <span class="soon"><span class="dot" aria-hidden="true"></span>Web version coming soon</span>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><span class="made">Made with love in India</span><br>by Uplighter Technology &amp; Services Pvt. Ltd. (UTSL)</div>
+    <div>Questions or ideas? <a href="mailto:support@utsltech.com">support@utsltech.com</a><br>
+      <a href="https://www.instagram.com/the.golugang/" rel="noopener" target="_blank">Instagram @the.golugang</a> &nbsp; <a href="https://utsltech.com/merge-drop/privacy">Privacy policy</a></div>
+    <a class="award" href="https://pixelpicked.com/game/X3yEammch6M/golu-gang-merge-drop" target="_blank" rel="noopener">
+      <img src="https://api.pixelpicked.com/api/badges/X3yEammch6M/live.png?theme=dark" width="250" height="54" alt="Approved on PixelPicked" loading="lazy">
+    </a>
+    <small>© 2026 UTSL. Google Play and the Google Play logo are trademarks of Google LLC.</small>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const PKG = 'com.utsltech.mergedrop';
+  // Play link with campaign tag per button, so Firebase shows which button brought the install
+  document.querySelectorAll('.play-link').forEach(a => {
+    const ref = encodeURIComponent(`utm_source=website&utm_medium=landing&utm_campaign=${a.dataset.utm || 'site'}`);
+    a.href = `https://play.google.com/store/apps/details?id=${PKG}&referrer=${ref}`;
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const GANG = [
+    ['Chiku', 'chiku', 'Tiny and curious. Always sprouting.'],
+    ['Pinku', 'pinku', 'Shy giggler with freckles.'],
+    ['Golu', 'golu', 'Sleepy snack lover.'],
+    ['Tinku', 'tinku', 'Red kite flyer, eyes on the sky.'],
+    ['Dabbu', 'dabbu', 'Cheeky little troublemaker.'],
+    ['Guddi', 'guddi', 'Pigtails, bindi and top of the class.'],
+    ['Bunty', 'bunty', 'Too cool for school.'],
+    ['Babloo', 'babloo', 'Glasses on, chai in hand.'],
+    ['Pehelwan', 'pehelwan', 'Flexes at every merge.'],
+    ['Rani', 'rani', 'Raja’s queen. Tiara always on.'],
+    ['Raja', 'raja', 'The legend. Merge to the crown.']
+  ];
+  const src = (k, p = 'idle') => `assets/buddies/${k}_${p}.webp`;
+
+  // hero buddy parade (wide screens only, decorative)
+  const hb = document.getElementById('heroBuddies');
+  GANG.forEach(([n, k], i) => { const im = new Image(); im.src = src(k); im.alt = ''; im.width = 22 + i * 5; hb.appendChild(im); });
+
+  // gang ladder: the tiers are a real sequence, so they are numbered
+  const ladder = document.getElementById('ladder'), bio = document.getElementById('bio');
+  GANG.forEach(([n, k, b], i) => {
+    const li = document.createElement('li');
+    const w = Math.round(46 + i * 7);
+    li.innerHTML = `<button type="button" aria-label="${n}, buddy ${i + 1} of 11"><img src="${src(k)}" alt="" width="${w}" loading="lazy"><span class="nm">${n}</span><span class="tr">${i + 1}</span></button>`;
+    const btn = li.querySelector('button'), im = li.querySelector('img');
+    const hi = () => { im.src = src(k, 'happy'); bio.innerHTML = `<b>${n}</b> ${b}`; };
+    btn.addEventListener('click', hi); btn.addEventListener('mouseenter', hi); btn.addEventListener('focus', hi);
+    btn.addEventListener('mouseleave', () => { im.src = src(k); });
+    ladder.appendChild(li);
+  });
+
+  // videos play only while on screen (saves data on phones)
+  const hero = document.getElementById('heroVideo'), snd = document.getElementById('soundBtn');
+  const vids = [hero, ...document.querySelectorAll('video[data-autoplay]')];
+  if (!reduce && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.preload = 'auto'; e.target.play().catch(() => {}); } else e.target.pause(); }), { threshold: .35 });
+    vids.forEach(v => io.observe(v));
+  } else vids.forEach(v => v.controls = true);
+  snd.addEventListener('click', () => {
+    hero.muted = !hero.muted; snd.textContent = hero.muted ? 'Sound on' : 'Sound off'; snd.setAttribute('aria-pressed', String(!hero.muted));
+    if (!hero.muted) hero.play().catch(() => {});
+  });
+
+  // poster viewer
+  const dlg = document.getElementById('viewer'), dimg = document.getElementById('viewerImg');
+  document.querySelectorAll('.poster button').forEach(b => b.addEventListener('click', () => {
+    dimg.src = b.dataset.full; dimg.alt = b.querySelector('img').alt;
+    if (dlg.showModal) dlg.showModal(); else window.open(b.dataset.full);
+  }));
+  dlg.addEventListener('click', e => { if (e.target === dlg) dlg.close(); });
+
+  // ---------- mini jar: small circle physics, same rules as the game ----------
+  const cv = document.getElementById('jar'), ctx = cv.getContext('2d');
+  const W = 340, H = 480, LINE = 78, R0 = 17, GROW = 1.16, MAXT = 10;
+  const rad = t => R0 * Math.pow(GROW, t);
+  const imgs = GANG.map(([, k]) => { const a = new Image(); a.src = src(k); const b = new Image(); b.src = src(k, 'happy'); return [a, b]; });
+  let bodies = [], next = 0, best = 0, over = false, aimX = W / 2, overT = 0, lastDrop = 0, fx = [];
+  const nextImg = document.getElementById('jarNext'), topEl = document.getElementById('jarTop');
+  const overEl = document.getElementById('jarOver'), bestEl = document.getElementById('jarBest');
+  const pickNext = () => { const r = Math.random(); next = r < .45 ? 0 : r < .75 ? 1 : r < .93 ? 2 : 3; nextImg.src = src(GANG[next][1]); nextImg.alt = GANG[next][0]; };
+  function reset() { bodies = []; best = 0; over = false; overT = 0; fx = []; topEl.textContent = 'Chiku'; overEl.classList.remove('show'); pickNext(); }
+  function drop(x) {
+    if (over || performance.now() - lastDrop < 420) return;
+    lastDrop = performance.now();
+    const r = rad(next); x = Math.max(r + 4, Math.min(W - r - 4, x));
+    bodies.push({ x, y: 30, vx: 0, vy: 2, t: next, r, g: 1, happy: 0, born: performance.now() });
+    pickNext();
+  }
+  const toX = e => { const b = cv.getBoundingClientRect(); return (e.clientX - b.left) * W / b.width; };
+  cv.addEventListener('pointermove', e => { aimX = toX(e); });
+  cv.addEventListener('pointerdown', e => { aimX = toX(e); drop(aimX); });
+  cv.tabIndex = 0;
+  cv.addEventListener('keydown', e => {
+    if (e.key === 'ArrowLeft') aimX -= 20; else if (e.key === 'ArrowRight') aimX += 20;
+    else if (e.key === ' ' || e.key === 'Enter') { e.preventDefault(); drop(aimX); }
+  });
+  document.getElementById('jarAgain').addEventListener('click', reset);
+
+  function step() {
+    const G = .35;
+    for (const b of bodies) { b.vy += G; b.vx *= .995; b.vy *= .995; b.x += b.vx; b.y += b.vy; if (b.g < 1) b.g = Math.min(1, b.g + .06); if (b.happy > 0) b.happy--; }
+    for (let it = 0; it < 4; it++) {
+      for (let i = 0; i < bodies.length; i++) for (let j = i + 1; j < bodies.length; j++) {
+        const a = bodies[i], c = bodies[j]; if (a.dead || c.dead) continue;
+        const ra = a.r * (.55 + .45 * a.g), rc = c.r * (.55 + .45 * c.g);
+        const dx = c.x - a.x, dy = c.y - a.y, d = Math.hypot(dx, dy) || .01;
+        if (d < ra + rc) {
+          if (a.t === c.t && a.t < MAXT) {
+            a.dead = c.dead = true;
+            const t = a.t + 1, nb = { x: (a.x + c.x) / 2, y: (a.y + c.y) / 2, vx: 0, vy: -2, t, r: rad(t), g: .55, happy: 40 };
+            bodies.push(nb); fx.push({ x: nb.x, y: nb.y, r: nb.r, life: 18 });
+            if (t > best) { best = t; topEl.textContent = GANG[t][0]; }
+            continue;
+          }
+          const ov = (ra + rc - d), nx = dx / d, ny = dy / d, ma = ra * ra, mc = rc * rc, s = ov / (ma + mc);
+          a.x -= nx * s * mc; a.y -= ny * s * mc; c.x += nx * s * ma; c.y += ny * s * ma;
+          const rv = (c.vx - a.vx) * nx + (c.vy - a.vy) * ny;
+          if (rv < 0) { const imp = -1.3 * rv / (1 / ma + 1 / mc); a.vx -= imp / ma * nx; a.vy -= imp / ma * ny; c.vx += imp / mc * nx; c.vy += imp / mc * ny; }
+        }
+      }
+      bodies = bodies.filter(b => !b.dead);
+      for (const b of bodies) {
+        const r = b.r * (.55 + .45 * b.g);
+        if (b.x < r) { b.x = r; b.vx = Math.abs(b.vx) * .3; }
+        if (b.x > W - r) { b.x = W - r; b.vx = -Math.abs(b.vx) * .3; }
+        if (b.y > H - r) { b.y = H - r; b.vy = -Math.abs(b.vy) * .25; b.vx *= .96; }
+      }
+    }
+    // game over if a settled buddy stays above the line for a moment
+    const now = performance.now();
+    const high = bodies.some(b => now - (b.born || 0) > 900 && b.y - b.r < LINE && Math.abs(b.vy) < 1.2);
+    overT = high ? overT + 1 : 0;
+    if (overT > 70 && !over) { over = true; bestEl.textContent = `You reached ${GANG[best][0]}. The full game goes all the way to Raja.`; overEl.classList.add('show'); }
+    fx = fx.filter(f => --f.life > 0);
+  }
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    ctx.setLineDash([10, 8]); ctx.strokeStyle = overT > 0 ? '#ff4d6a' : '#ffffff88'; ctx.lineWidth = 3;
+    ctx.beginPath(); ctx.moveTo(0, LINE); ctx.lineTo(W, LINE); ctx.stroke(); ctx.setLineDash([]);
+    if (!over) {
+      const r = rad(next), x = Math.max(r + 4, Math.min(W - r - 4, aimX));
+      ctx.strokeStyle = '#ffffff40'; ctx.lineWidth = 2; ctx.setLineDash([6, 10]);
+      ctx.beginPath(); ctx.moveTo(x, 30 + r); ctx.lineTo(x, H); ctx.stroke(); ctx.setLineDash([]);
+      drawB({ x, y: 30, r, t: next, g: 1, happy: 0 }, .85);
+    }
+    for (const b of bodies) drawB(b, 1);
+    for (const f of fx) { ctx.strokeStyle = `rgba(255,255,255,${f.life / 18})`; ctx.lineWidth = 5; ctx.beginPath(); ctx.arc(f.x, f.y, f.r * (1 + (18 - f.life) / 10), 0, 7); ctx.stroke(); }
+  }
+  function drawB(b, a) {
+    const im = imgs[b.t][b.happy > 0 ? 1 : 0], r = b.r * (.55 + .45 * b.g);
+    if (!im.complete || !im.naturalWidth) { ctx.fillStyle = '#FFD23F'; ctx.beginPath(); ctx.arc(b.x, b.y, r, 0, 7); ctx.fill(); return; }
+    // sprites are a little taller than wide; fit the body circle to the width
+    const w = r * 2.15, h = w * im.naturalHeight / im.naturalWidth;
+    ctx.globalAlpha = a; ctx.drawImage(im, b.x - w / 2, b.y - h * .52, w, h); ctx.globalAlpha = 1;
+  }
+  let acc = 0, last = performance.now(), visible = false;
+  new IntersectionObserver(es => { visible = es[0].isIntersecting; }).observe(cv);
+  (function loop(t) {
+    acc += Math.min(100, t - last); last = t;
+    if (visible) { while (acc >= 1000 / 60) { step(); acc -= 1000 / 60; } draw(); } else acc = 0;
+    requestAnimationFrame(loop);
+  })(performance.now());
+  reset();
+})();
+</script>
+</body>
+</html>
