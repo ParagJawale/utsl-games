@@ -1,0 +1,33 @@
+{
+ "name": "Golu Gang: Merge Drop",
+ "short_name": "Golu Gang",
+ "description": "Drop, merge and grow the Golu Gang! A cute Indian merge puzzle you can play free in your browser. 11 desi buddies, daily challenge, leaderboard. No download needed.",
+ "start_url": "./?utm_source=pwa",
+ "scope": "./",
+ "display": "standalone",
+ "orientation": "portrait",
+ "background_color": "#2A1338",
+ "theme_color": "#2A1338",
+ "categories": [
+  "games",
+  "entertainment"
+ ],
+ "icons": [
+  {
+   "src": "icons/icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icons/maskable-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
