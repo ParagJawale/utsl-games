@@ -21,6 +21,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="fonts/baloo-2-latin-800-normal.woff2" as="font" type="font/woff2" crossorigin>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "VideoGame", "name": "Golu Gang: Merge Drop", "url": "https://games.utsltech.com/play/", "description": "Drop, merge and grow the Golu Gang! A cute Indian merge puzzle you can play free in your browser. 11 desi buddies, daily challenge, leaderboard. No download needed.", "image": "https://games.utsltech.com/play/icons/og.png", "genre": ["Puzzle", "Casual", "Merge"], "gamePlatform": ["Web browser", "Android"], "applicationCategory": "Game", "operatingSystem": "Any", "inLanguage": "en", "publisher": {"@type": "Organization", "name": "UTSL (Uplighter Technology and Services Pvt Ltd)", "url": "https://utsltech.com"}, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "INR"}, "sameAs": ["https://play.google.com/store/apps/details?id=com.utsltech.mergedrop", "https://www.instagram.com/the.golugang/"]}</script>
+<script async data-ad-frequency-hint="150s" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-5777959353951392" crossorigin="anonymous"></script>
 
 <style>@font-face{font-family:'Baloo 2';font-weight:600;src:url(fonts/baloo-2-latin-600-normal.woff2) format('woff2')}@font-face{font-family:'Baloo 2';font-weight:800;src:url(fonts/baloo-2-latin-800-normal.woff2) format('woff2')}</style>
 <style>
@@ -65,14 +66,17 @@
     .side .small { font-size: 12px; opacity: .7; }
   }
   @media (min-aspect-ratio: 4/5) and (min-width: 760px) and (max-width: 1100px) { .side .hide-s { display: none; } }
+  .adbox { display: none; }
+  @media (min-aspect-ratio: 4/5) and (min-width: 1100px) and (min-height: 800px) { .adbox { display: block; width: 300px; } .adbox small { display: block; font: 600 10px var(--display); opacity: .55; letter-spacing: .5px; margin-bottom: 3px; } }
+  .adbox:has(ins[data-ad-status="unfilled"]) { display: none !important; }
 </style>
 </head>
 <body>
 <div id="appbar" hidden><img src="icons/icon-192.png" alt=""><span>Golu Gang is better in the app<br><small>Daily reminders, no-ads option</small></span><a data-play="appbar" target="_blank" rel="noopener">Get app</a><button aria-label="Close">×</button></div>
 <aside class="side l"><h1>Golu Gang<br><span>Merge Drop</span></h1><p>Drop a buddy, merge two of the same, grow the gang all the way to King Raja. Do not let the jar overflow!</p>
-<ul class="hide-s"><li>Aim with the mouse, click to drop</li><li><kbd>←</kbd> <kbd>→</kbd> aim, <kbd>Space</kbd> drop, <kbd>Esc</kbd> pause</li><li>Your coins and best scores are saved in this browser</li></ul></aside>
+<ul class="hide-s"><li>Aim with the mouse, click to drop</li><li><kbd>←</kbd> <kbd>→</kbd> aim, <kbd>Space</kbd> drop, <kbd>Esc</kbd> pause</li><li>Your coins and best scores are saved in this browser</li></ul><div class="adbox"><small>ADVERTISEMENT</small><ins class="adsbygoogle" style="display:block;width:300px;height:250px" data-ad-client="ca-pub-5777959353951392" data-ad-slot="4926986980" data-ad-format="rectangle" data-full-width-responsive="false"></ins></div></aside>
 <aside class="side r"><p><b>Play on your phone</b></p><img class="qr" src="icons/qr-play.png" alt="QR code for Golu Gang on Google Play"><a class="badge" data-play="desktop_side" target="_blank" rel="noopener"><img src="icons/google-play-badge.webp" alt="Get it on Google Play" width="200" height="59"></a>
-<p class="small hide-s">Made with love in India by UTSL · <a href="https://utsltech.com/merge-drop/privacy" style="color:#FFD23F" target="_blank" rel="noopener">Privacy</a> · <a href="https://www.instagram.com/the.golugang/" style="color:#FFD23F" target="_blank" rel="noopener">@the.golugang</a><br>Google Play and the Google Play logo are trademarks of Google LLC.</p></aside>
+<p class="small hide-s">Made with love in India by UTSL · <a href="https://utsltech.com/merge-drop/privacy" style="color:#FFD23F" target="_blank" rel="noopener">Privacy</a> · <a href="https://www.instagram.com/the.golugang/" style="color:#FFD23F" target="_blank" rel="noopener">@the.golugang</a><br>Google Play and the Google Play logo are trademarks of Google LLC.</p><div class="adbox"><small>ADVERTISEMENT</small><ins class="adsbygoogle" style="display:block;width:300px;height:250px" data-ad-client="ca-pub-5777959353951392" data-ad-slot="9260536552" data-ad-format="rectangle" data-full-width-responsive="false"></ins></div></aside>
 <noscript><p style="color:#fff;font-family:sans-serif;padding:20px">Golu Gang: Merge Drop needs JavaScript to play.</p></noscript>
 <div id="wrap"><canvas id="c" tabindex="0" aria-label="Golu Gang: Merge Drop game. Drag to aim, release to drop."></canvas></div>
 <script src="matter.min.js"></script>
@@ -1864,6 +1868,7 @@ requestAnimationFrame(frame);
     }
   } catch (e) {}
   document.querySelectorAll('a[data-play]').forEach(a => { a.href = window.__WEB.play(a.dataset.play); a.addEventListener('click', () => { try { window.NativeTrack('get_app', { from: a.dataset.play }); } catch (e) {} }); });
+  document.querySelectorAll('.adbox').forEach(b => { if (getComputedStyle(b).display !== 'none') { try { (window.adsbygoogle = window.adsbygoogle || []).push({}); } catch (e) {} } });
   if ('serviceWorker' in navigator && location.protocol === 'https:') addEventListener('load', () => navigator.serviceWorker.register('sw.js').catch(() => {}));
 })();
 </script>
