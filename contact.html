@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact | Golu Gang: Merge Drop</title>
+<meta name="description" content="Get in touch with the Golu Gang team at UTSL. Questions, feedback, partnerships or support for Golu Gang: Merge Drop.">
+<link rel="canonical" href="https://games.utsltech.com/contact.html">
+<meta name="theme-color" content="#2B1A3A">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/icon-192.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Contact | Golu Gang: Merge Drop">
+<meta property="og:description" content="Questions, feedback or support for Golu Gang: Merge Drop. Reach the UTSL team.">
+<meta property="og:url" content="https://games.utsltech.com/contact.html">
+<meta property="og:image" content="https://games.utsltech.com/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --plum:#2B1A3A;
+  --night:#3A1652;
+  --berry:#821E46;
+  --gold:#FFD23F;
+  --marigold:#FF9F1C;
+  --magenta:#D63384;
+  --go:#2EC46E;
+  --cream:#FFF6E6;
+  --ink-soft:#6B4C70;
+  --outline:4px solid var(--plum);
+  --display:"Lilita One", "Arial Rounded MT Bold", system-ui, sans-serif;
+  --body:"Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;font:16px/1.6 var(--body);color:var(--plum);background:var(--cream);overflow-x:hidden;min-height:100vh;display:flex;flex-direction:column}
+main{flex:1}
+img{max-width:100%;display:block;height:auto}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--gold);outline-offset:3px;border-radius:6px}
+.wrap{width:min(1120px,100% - 32px);margin-inline:auto}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.05;margin:0;letter-spacing:.3px}
+h1{font-size:clamp(46px,7vw,84px);color:var(--gold);-webkit-text-stroke:3px var(--plum);paint-order:stroke fill;text-shadow:0 6px 0 var(--plum)}
+h2{font-size:clamp(28px,4vw,40px)}
+p{margin:0 0 14px;max-width:62ch}
+.skip{position:absolute;left:-999px;top:8px;background:var(--gold);padding:8px 14px;border-radius:10px;z-index:10}
+.skip:focus{left:8px}
+.garland{height:34px;background:
+  radial-gradient(circle at 17px 9px,#FFC21A 0 9px,#C8640A 9.5px 11px,transparent 11.5px) 0 0/34px 34px repeat-x,
+  radial-gradient(circle at 0 9px,#FF8A00 0 9px,#B8540A 9.5px 11px,transparent 11.5px) 0 0/34px 34px repeat-x;
+  position:relative;z-index:2}
+.top{background:var(--plum);color:#fff;position:sticky;top:0;z-index:5}
+.top .wrap{display:flex;align-items:center;gap:16px;min-height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:var(--display);font-size:22px}
+.brand img{width:40px;height:40px;border-radius:11px;border:2px solid var(--gold)}
+.top nav{margin-left:auto;display:flex;gap:22px;font-weight:600;font-size:15px}
+.top nav a{text-decoration:none;opacity:.88}
+.top nav a:hover{opacity:1;color:var(--gold)}
+.top nav a[aria-current="page"]{opacity:1;color:var(--gold)}
+.top .mini-badge img{height:40px;width:auto}
+@media (max-width:760px){.top nav{display:none}.top .mini-badge{margin-left:auto}}
+
+.hero{background:linear-gradient(180deg,var(--night) 0%,#5A1A55 60%,var(--berry) 100%);color:#fff;position:relative;overflow:hidden;padding:56px 0 72px}
+.hero::before{content:"";position:absolute;inset:0;background:
+  radial-gradient(2px 2px at 12% 18%,#fff8 50%,transparent 51%),radial-gradient(2px 2px at 30% 8%,#fff6 50%,transparent 51%),
+  radial-gradient(3px 3px at 48% 22%,#ffe9a8 50%,transparent 51%),radial-gradient(2px 2px at 70% 12%,#fff8 50%,transparent 51%),
+  radial-gradient(2px 2px at 88% 30%,#fff6 50%,transparent 51%),radial-gradient(3px 3px at 8% 46%,#ffe9a8 50%,transparent 51%),
+  radial-gradient(2px 2px at 60% 40%,#fff5 50%,transparent 51%);pointer-events:none}
+.hero .wrap{position:relative}
+.hero .lede{font-size:clamp(17px,2vw,20px);margin:18px 0 0;max-width:42ch;color:#FCE9F2}
+.hero-floor{height:48px;background:var(--berry);border-top:6px solid var(--gold)}
+
+.contact{padding:72px 0 96px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:22px;align-items:start}
+.card{background:#fff;border:var(--outline);border-radius:26px;padding:28px 28px 26px;box-shadow:8px 8px 0 var(--plum)}
+.card h2{margin-bottom:14px}
+.card p{color:var(--ink-soft)}
+.card ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px}
+.card li{display:flex;flex-wrap:wrap;gap:8px 12px;align-items:baseline}
+.card li strong{min-width:110px;font-family:var(--display);font-weight:400;font-size:22px;color:var(--plum)}
+.card a.link{color:var(--magenta);font-weight:600;text-decoration:none;border-bottom:2px solid #D6338455}
+.card a.link:hover{border-bottom-color:var(--magenta)}
+.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:14px 20px;margin-top:22px}
+.btn{font:600 16px var(--body);border:3px solid var(--plum);border-radius:999px;padding:11px 22px;cursor:pointer;background:var(--go);color:#fff;box-shadow:0 5px 0 var(--plum);text-decoration:none;display:inline-block}
+.btn:active{transform:translateY(3px);box-shadow:0 2px 0 var(--plum)}
+.btn.alt{background:var(--gold);color:var(--plum)}
+.note{margin-top:18px;font-size:14px;color:var(--ink-soft)}
+@media (max-width:860px){.grid{grid-template-columns:1fr}}
+
+footer{background:var(--plum);color:#E9D8F0;padding:44px 0 30px;font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between}
+footer a{color:var(--gold)}
+footer .made{font-family:var(--display);font-size:22px;color:#fff}
+footer .award img{display:block;height:54px;width:auto;transition:transform .15s}
+footer .award:hover img{transform:translateY(-2px)}
+footer small{display:block;width:100%;opacity:.7;margin-top:10px}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="/" aria-label="Golu Gang: Merge Drop home"><img src="assets/img/icon.webp" alt="" width="40" height="40">Golu Gang</a>
+    <nav aria-label="Sections">
+      <a href="/#gameplay">Gameplay</a>
+      <a href="/#gang">The gang</a>
+      <a href="/play/?utm_source=website&amp;utm_medium=contact&amp;utm_campaign=nav">Play now</a>
+      <a href="/contact.html" aria-current="page">Contact</a>
+    </nav>
+    <a class="mini-badge play-link" href="#" data-utm="contact_nav"><img src="assets/img/google-play-badge.webp" alt="Get it on Google Play" width="135" height="40"></a>
+  </div>
+</header>
+<div class="garland" aria-hidden="true"></div>
+
+<main id="main">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Contact the Golu Gang</h1>
+      <p class="lede">Questions, feedback, bug reports, partnership ideas or support for Golu Gang: Merge Drop? We’d love to hear from you.</p>
+    </div>
+  </section>
+  <div class="hero-floor" aria-hidden="true"></div>
+
+  <section class="contact">
+    <div class="wrap">
+      <div class="grid">
+        <div class="card">
+          <h2>Get in touch</h2>
+          <ul>
+            <li><strong>Email</strong> <a class="link" href="mailto:support@utsltech.com">support@utsltech.com</a></li>
+            <li><strong>Instagram</strong> <a class="link" href="https://www.instagram.com/the.golugang/" rel="noopener" target="_blank">@the.golugang</a></li>
+            <li><strong>Website</strong> <a class="link" href="https://utsltech.com" rel="noopener" target="_blank">utsltech.com</a></li>
+            <li><strong>Publisher</strong> Uplighter Technology &amp; Services Pvt. Ltd. (UTSL)</li>
+          </ul>
+          <div class="cta-row">
+            <a class="btn" href="mailto:support@utsltech.com?subject=Golu%20Gang%20Support">Email support</a>
+            <a class="btn alt" href="/">Back to home</a>
+          </div>
+          <p class="note">For game support, include your device model, Android version (if on Android), and a short description of the issue so we can help faster.</p>
+        </div>
+
+        <div class="card">
+          <h2>Play Golu Gang</h2>
+          <p>Drop, merge and grow the Golu Gang. Can you crown Raja?</p>
+          <div class="cta-row">
+            <a class="btn" href="/play/?utm_source=website&amp;utm_medium=contact&amp;utm_campaign=page">▶ Play in your browser</a>
+            <a class="btn alt play-link" href="#" data-utm="contact_page">Get it on Google Play</a>
+          </div>
+          <p class="note">You can also read our <a class="link" href="https://utsltech.com/merge-drop/privacy">privacy policy</a>.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div><span class="made">Made with love in India</span><br>by Uplighter Technology &amp; Services Pvt. Ltd. (UTSL)</div>
+    <div>Questions or ideas? <a href="mailto:support@utsltech.com">support@utsltech.com</a><br>
+      <a href="/contact.html">Contact</a> &nbsp; <a href="https://www.instagram.com/the.golugang/" rel="noopener" target="_blank">Instagram @the.golugang</a> &nbsp; <a href="https://utsltech.com/merge-drop/privacy">Privacy policy</a></div>
+    <a class="award" href="https://pixelpicked.com/game/X3yEammch6M/golu-gang-merge-drop" target="_blank" rel="noopener">
+      <img src="https://api.pixelpicked.com/api/badges/X3yEammch6M/live.png?theme=dark" width="250" height="54" alt="Approved on PixelPicked" loading="lazy">
+    </a>
+    <small>© 2026 UTSL. Google Play and the Google Play logo are trademarks of Google LLC.</small>
+  </div>
+</footer>
+
+<script>
+(() => {
+  const PKG = 'com.utsltech.mergedrop';
+  document.querySelectorAll('.play-link').forEach(a => {
+    const ref = encodeURIComponent(`utm_source=website&utm_medium=contact&utm_campaign=${a.dataset.utm || 'site'}`);
+    a.href = `https://play.google.com/store/apps/details?id=${PKG}&referrer=${ref}`;
+    a.target = '_blank'; a.rel = 'noopener';
+  });
+})();
+</script>
+</body>
+</html>
