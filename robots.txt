@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /play-test/
+
+Sitemap: https://games.utsltech.com/sitemap.xml
